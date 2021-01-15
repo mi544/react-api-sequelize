@@ -23,12 +23,14 @@ function Users() {
   }
 
   const addUser = (u) => {
+    const data = input
+    setInput('')
     fetch('/api/user/', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json;charset=utf-8'
       },
-      body: JSON.stringify({ name: input })
+      body: JSON.stringify({ name: data })
     })
       .then((r) => r.json())
       .then((r) => {
