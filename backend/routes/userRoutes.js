@@ -2,6 +2,18 @@ const router = require('express').Router()
 const db = require('../models')
 const { scs, errs } = require('../msg')
 
+router.get('/all', async function (req, res) {
+  try {
+    const allUsers = await db.User.findAll({ attributes: ['name', 'nanoId'] })
+    if (!allUsers.length) {
+      return res.json(errs.user.notFound)
+    }
+    res.json(allUsers)
+  } catch (err) {
+    res.json(errs.user.generic)
+  }
+})
+
 router.get('/:id', async function (req, res) {
   try {
     // should be id from the session or token
