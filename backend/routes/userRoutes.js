@@ -6,10 +6,15 @@ router.get('/all', async function (req, res) {
   try {
     const allUsers = await db.User.findAll({ attributes: ['name', 'nanoId'] })
     if (!allUsers.length) {
+      // delaying on purpose to see the animation
+      await new Promise((resolve) => setTimeout(resolve, 1 * 1000))
       return res.json(errs.user.notFound)
     }
-    res.json(allUsers)
+    // delaying on purpose to see the animation
+    await new Promise((resolve) => setTimeout(resolve, 1 * 1000))
+    res.json(scs.user.found(await Promise.all(allUsers.map((i) => i.toJSON()))))
   } catch (err) {
+    console.log(err)
     res.json(errs.user.generic)
   }
 })
