@@ -9,6 +9,10 @@
   "author": "Maksim Verkhoturov",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nanoid": "^3.1.20",
+    "pg": "^8.5.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5"
   }
 }
