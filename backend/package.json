@@ -1,0 +1,14 @@
+{
+  "name": "api-backend",
+  "version": "1.0.0",
+  "description": "The back end for API React app.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Maksim Verkhoturov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
