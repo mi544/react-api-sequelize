@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
       unique: true,
       validate: {
         notEmpty: { msg: 'Username is empty' },
-        len: { args: [5, 35], msg: 'Incorrect username length' },
+        len: { args: [3, 35], msg: 'Incorrect username length' },
         notNull: {
           msg: 'Incorrect username'
         },
