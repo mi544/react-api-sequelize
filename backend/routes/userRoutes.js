@@ -14,6 +14,15 @@ router.get('/all', async function (req, res) {
   }
 })
 
+router.delete('/all', async function (req, res) {
+  try {
+    await db.User.destroy({ where: {} })
+    res.json(scs.user.deleted)
+  } catch (err) {
+    res.json(errs.user.generic)
+  }
+})
+
 router.get('/:id', async function (req, res) {
   try {
     // should be id from the session or token
