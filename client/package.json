@@ -4,7 +4,8 @@
   "author": "Maksim Verkhoturov",
   "license": "ISC",
   "description": "The front end for API React app.",
-  "proxy": "http://localhost:3001/",
+  "proxy": "http://localhost:3001",
+  "secure": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
